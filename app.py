@@ -6,7 +6,7 @@ import os
 
 scriptdir = os.path.dirname(os.path.abspath(__file__))
 pklpath = os.path.join(scriptdir, "Price Prediction.pkl")
-jb.dump({'Price Prediction.pkl'}, pklpath)
+data = jb.load(pklpath)
 
 data = jb.load('Price Prediction.pkl')
 model = data['model']
@@ -37,15 +37,16 @@ if st.button("Predict"):
     Dep_Day_TimeEnc = Dep_Day_TimeLE.transform([Dep_Day_Time])[0]
     Arrival_Day_timeEnc = Arrival_Day_TimeLE.transform([Arrival_Day_time])[0]
     ipdata = pd.DataFrame({
-        'Airline': [AirlineEnc],
-        'Source': [SourceEnc],
-        'Destination': [DestinationEnc],
-        'Total_Stops': [Total_Stops],
-        'Additional_Info': [Additional_InfoEnc],
-        'Departure_Day_Time': [Dep_Day_TimeEnc],
-        'Arrival_Day_time': [Arrival_Day_timeEnc],
-        'Departure_Time': [Departure_Time]
+    'Airline': [AirlineEnc],
+    'Source': [SourceEnc],
+    'Destination': [DestinationEnc],
+    'Total_Stops': [Total_Stops],
+    'Additional_Info': [Additional_InfoEnc],
+    'Arrival_Day_Time': [Arrival_Day_timeEnc],
+    'Dep_Day_Time': [Dep_Day_TimeEnc],
+    'Departure_Time': [Departure_Time]  # Added this line   
     })
+    ipdata = ipdata[scaler.feature_names_in_]
     st.write("Your Input Data:")
     st.write(ipdata)
     datascaled = scaler.transform(ipdata)

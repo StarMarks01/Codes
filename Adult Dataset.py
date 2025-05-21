@@ -1,4 +1,3 @@
-import numpy as np
 import pandas as pd
 import matplotlib.pyplot as mp
 import seaborn as sns
@@ -69,7 +68,7 @@ df2 = df2.drop(columns = constcols)
 x = df2.drop(columns = 'income')
 y = df2['income']
 
-xtrain,xtest,ytrain,ytest = train_test_split(x,y,random_state = 70, test_size = 30)
+xtrain,xtest,ytrain,ytest = train_test_split(x,y,random_state = 70, test_size = 0.3)
 
 scaler.fit(xtrain)
 xtrainscaled = scaler.transform(xtrain)

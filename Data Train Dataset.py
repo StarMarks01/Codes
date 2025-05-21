@@ -11,7 +11,7 @@ import os
 
 scriptdir = os.path.split(os.path.realpath(__file__))[0]
 filepath = os.path.join(scriptdir, "Data Train.xlsx")
-df = pd.read_excel(r"C:\Users\Yagnesh Narola\Documents\Coding Languages\Artificial Intelligence\Excel_and_CSV\Data Train.xlsx")
+df = pd.read_excel(r"C:\Users\Pavilion\Documents\Coding Languages\Artificial Intelligence\Excel and Csv\Data Train.xlsx")
 
 df.isnull().sum()
 
