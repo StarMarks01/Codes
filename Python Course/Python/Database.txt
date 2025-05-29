@@ -1,0 +1,11 @@
+Database
+
+1 Offline -> device
+
+2. Online
+
+--? Data Storage
+
+--> Server --> Storage 
+
+3 Way(Type) SQL, MySQL, NoSQL

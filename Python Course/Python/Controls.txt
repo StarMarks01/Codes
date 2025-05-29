@@ -1,0 +1,6 @@
+Python Controls:
+ctrl + / : # or remove #
+ctrl + z : undo
+ctrl + a : select all
+alt + ↓ : move down text
+ctrl + alt + shift + ↓
